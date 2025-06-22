@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Configurações do editor (VSCode, PyCharm)
+.vscode/
+.idea/
+
+# Arquivos de ambiente
+.env
+
+# Uploads de imagens e arquivos
+uploads/
+
+# Logs
+*.log
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados por setuptools, distutils
+*.egg-info/
+dist/
+build/
