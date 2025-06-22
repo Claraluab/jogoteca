@@ -1,113 +1,71 @@
- Jogoteca (Aplicação Web Flask)
-📝 Descrição
-A Jogoteca é uma aplicação web desenvolvida com Flask (Python) para gerenciar uma coleção de jogos. Permite cadastrar, editar, visualizar e deletar jogos, com um sistema seguro de autenticação de usuários.
+# 🎮 Jogoteca - Sistema de Gerenciamento de Jogos
 
-✨ Funcionalidades
-✅ Cadastro, login e logout de usuários com segurança
+![Flask](https://img.shields.io/badge/Flask-2.3.2-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
+![Python](https://img.shields.io/badge/Python-3.8%2B-yellow)
 
-✅ CRUD completo de jogos (Create, Read, Update, Delete)
+## 📋 Descrição
 
-✅ Upload de capas para os jogos
+Aplicação web em Flask para gerenciar sua coleção de jogos, com sistema de cadastro e autenticação seguros, upload de capas, e CRUD completo de jogos.
 
-✅ Validação de formulários robusta
+## ✨ Features
 
-✅ Interface responsiva com Bootstrap
+- ✔️ Cadastro e autenticação segura de usuários com senha criptografada  
+- ✔️ CRUD completo de jogos (criar, listar, editar, deletar)  
+- ✔️ Upload e gerenciamento de capas dos jogos  
+- ✔️ Interface responsiva com Bootstrap 5  
+- ✔️ Banco de dados MySQL usando SQLAlchemy ORM  
+- ✔️ Proteção contra CSRF em todos os formulários  
+- ✔️ Validação de dados de entrada  
 
-✅ Sistema de hash seguro para senhas usando Flask-Bcrypt
+## 🛠️ Tecnologias Utilizadas
 
-🔒 Segurança
-Todas as senhas são armazenadas de forma criptografada usando Flask-Bcrypt
+| Tecnologia    | Finalidade                        |
+|--------------|----------------------------------|
+| Flask        | Backend principal                 |
+| Flask-WTF    | Formulários e validação           |
+| Flask-Bcrypt | Hash de senhas                   |
+| MySQL        | Banco de dados                   |
+| SQLAlchemy   | ORM para MySQL                  |
+| Bootstrap 5  | Frontend responsivo              |
 
-Sistema de autenticação seguro com sessões
+## 🚀 Como Executar
 
-Proteção contra ataques CSRF nos formulários
+### Pré-requisitos
 
-Validação de entrada de dados em todos os formulários
+- Python 3.8 ou superior  
+- MySQL Server instalado  
+- Git instalado  
 
-🛠 Tecnologias Utilizadas
-Backend: Python com Flask
+### Configuração do Ambiente
 
-Frontend: HTML, CSS, Bootstrap
-
-Banco de Dados: MySQL (com SQLAlchemy ORM)
-
-Autenticação Segura: Flask-Bcrypt para hash de senhas
-
-Gerenciamento de Formulários: Flask-WTF com CSRF protection
-
-⚙️ Configuração do Ambiente
-Pré-requisitos
-Python 3.8+
-
-MySQL Server instalado e rodando
-
-pip (gerenciador de pacotes Python)
-
-Instalação
-Clone o repositório:
-
-bash
-git clone https://github.com/seu-usuario/jogoteca.git
-cd jogoteca
-Crie um ambiente virtual:
-
-bash
+```bash
 python -m venv venv
 source venv/bin/activate  # No Windows: venv\Scripts\activate
-Instale as dependências:
-
-bash
 pip install -r requirements.txt
-Configure o banco de dados MySQL:
+```
 
-Crie um banco de dados MySQL
-
-Configure as variáveis de conexão no arquivo de configuração do Flask
-
-Execute as migrações do banco de dados:
-
-bash
+### Inicializar e Aplicar Migrações do Banco
+```bash
 flask db init
-flask db migrate
+flask db migrate -m "Inicializando banco de dados"
 flask db upgrade
-Executando a Aplicação
-bash
+```
+
+### Executar a Aplicação
+```bash
 flask run
-Acesse no navegador: http://localhost:5000
+```
+```markdown
+Abra o navegador e acesse: http://localhost:5000
+```
+## 🔒 Segurança
+- Senhas armazenadas com hash BCrypt, garantindo segurança
+- Proteção CSRF ativa para todos os formulários
+- Validação de dados de entrada para evitar inconsistências e ataques
 
-🗂 Estrutura do Projeto
-text
-jogoteca/
-├── app.py                # Aplicação principal Flask
-├── models.py             # Modelos de banco de dados MySQL
-├── helpers.py            # Funções auxiliares e formulários
-├── static/               # Arquivos estáticos (CSS, JS)
-├── templates/            # Templates HTML
-│   ├── base.html         # Template base
-│   ├── lista.html        # Lista de jogos
-│   ├── novo.html         # Formulário de novo jogo
-│   ├── editar.html       # Formulário de edição
-│   ├── login.html        # Página de login
-│   └── cadastro.html     # Página de cadastro
-├── uploads/              # Armazena as capas dos jogos
-├── migrations/           # Migrações do banco de dados
-└── requirements.txt      # Dependências do projeto
-📌 Rotas Principais
-Rota	Método	Descrição
-/	GET	Lista todos os jogos
-/novo	GET	Formulário para adicionar novo jogo (requer autenticação)
-/criar	POST	Processa o formulário de novo jogo
-/editar/<id>	GET	Formulário para editar jogo (requer autenticação)
-/atualizar	POST	Processa o formulário de edição
-/deletar/<id>	GET	Remove um jogo (requer autenticação)
-/login	GET	Página de login
-/autenticar	POST	Processa o login
-/logout	GET	Faz logout
-/cadastro	GET/POST	Página de cadastro de novos usuários
-👤 Primeiro Acesso
-Acesse a rota /cadastro para criar seu primeiro usuário
 
-Faça login com as credenciais criadas
 
-Comece a gerenciar sua coleção de jogos
+
 
